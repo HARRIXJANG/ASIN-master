@@ -17,7 +17,7 @@ def load_h5_name_id(h5_filename):
     return (data ,nameofpart, id)
 
 with tf.device('/CPU'):
-    path=r'demo_datas'
+    path=r'demo_data'
     model_save_weights_file=r'models\ASIN_best_weights.h5'
     WriteFile=r'draw\Results.txt'
 
@@ -279,12 +279,6 @@ with tf.device('/CPU'):
                 logFile.write(str(BFLabel))
             logFile.write('\t')
         logFile.write('\n')
-        #上传版本不需要，但是有用
-        # for j in range(len(AllclustersResults[i])):
-        #     for k in range(len(AllclustersResults[i][j])):
-        #         logFile.write(str(int(AllclustersResults[i][j][k]))+'\t')
-        #     logFile.write('**'+'\t')
-        # logFile.write('\n')
         for j in range(len(PredictResult_Instances[i])):
             for k in range(len(PredictResult_Instances[i][j])):
                 logFile.write(str(int(PredictResult_Instances[i][j][k]))+'\t')
