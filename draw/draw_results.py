@@ -64,9 +64,9 @@ if partnumfloat in PartNames:
     if partnumfloat in PartNames:
         PartNamesList = PartNames.tolist()
         indexofpartnum = PartNamesList.index(partnumfloat)
-        for i in range(len(FaceClasses[indexofpartnum])):
-            if FaceClasses[indexofpartnum][i] == "10000": # Slot
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+        for i in range(len(FaceClasses[0])):
+            if FaceClasses[0][i] == "10000": # Slot
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -74,8 +74,8 @@ if partnumfloat in PartNames:
                     Sementicx_1.append(PointDatasList[indexofpartnum][n][j][0])
                     Sementicy_1.append(PointDatasList[indexofpartnum][n][j][1])
                     Sementicz_1.append(PointDatasList[indexofpartnum][n][j][2])
-            elif FaceClasses[indexofpartnum][i] == "01000": # Base
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+            elif FaceClasses[0][i] == "01000": # Base
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -83,8 +83,8 @@ if partnumfloat in PartNames:
                     Sementicx_2.append(PointDatasList[indexofpartnum][n][j][0])
                     Sementicy_2.append(PointDatasList[indexofpartnum][n][j][1])
                     Sementicz_2.append(PointDatasList[indexofpartnum][n][j][2])
-            elif FaceClasses[indexofpartnum][i] == "00100": # Pocket
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+            elif FaceClasses[0][i] == "00100": # Pocket
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -92,8 +92,8 @@ if partnumfloat in PartNames:
                     Sementicx_3.append(PointDatasList[indexofpartnum][n][j][0])
                     Sementicy_3.append(PointDatasList[indexofpartnum][n][j][1])
                     Sementicz_3.append(PointDatasList[indexofpartnum][n][j][2])
-            elif FaceClasses[indexofpartnum][i] == "00010": # Hole
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+            elif FaceClasses[0][i] == "00010": # Hole
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -117,9 +117,9 @@ if partnumfloat in PartNames:
         Sementiczs.append(Sementicz_3)
         Sementiczs.append(Sementicz_4)
 
-        for i in range(len(BottomFaceLabels[indexofpartnum])):
-            if BottomFaceLabels[indexofpartnum][i] == "0":
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+        for i in range(len(BottomFaceLabels[0])):
+            if BottomFaceLabels[0][i] == "0":
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -128,7 +128,7 @@ if partnumfloat in PartNames:
                     BottomFacecy_1.append(PointDatasList[indexofpartnum][n][j][1])
                     BottomFacecz_1.append(PointDatasList[indexofpartnum][n][j][2])
             else:
-                TempFaceId = float(FaceIdsResult[indexofpartnum][i])
+                TempFaceId = float(FaceIdsResult[0][i])
                 FaceIdsList = FaceIds.tolist()
                 n = FaceIdsList[indexofpartnum].index(TempFaceId)
                 PointDatasList = PointDatas.tolist()
@@ -145,10 +145,10 @@ if partnumfloat in PartNames:
         BottomFaceczs.append(BottomFacecz_1)
         BottomFaceczs.append(BottomFacecz_2)
 
-        for i in range(len(InstanceFacesIds[indexofpartnum])):
+        for i in range(len(InstanceFacesIds[0])):
             EachInstanceFacesIds = []
             EachInstanceFacesId = []
-            for instancesfacesid in InstanceFacesIds[indexofpartnum]:
+            for instancesfacesid in InstanceFacesIds[0]:
                 if instancesfacesid!="**":
                     EachInstanceFacesId.append(instancesfacesid)
                 else:
@@ -208,9 +208,3 @@ if partnumfloat in PartNames:
         print("The part is not in the .h5 file!")
 else:
     print("The part is not in the results file!")
-
-
-
-
-
-
