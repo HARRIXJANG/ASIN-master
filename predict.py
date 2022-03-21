@@ -9,11 +9,11 @@ import tensorflow as tf
 
 
 
-def load_h5_name_id(h5_filename):
+def load_h5_name_id(h5_filename, n):
     f = h5py.File(h5_filename)
-    data = f['data'][1:2]
-    nameofpart = f['name'][1:2]
-    id = f['id'][1:2]
+    data = f['data'][n:n+1]
+    nameofpart = f['name'][n:n+1]
+    id = f['id'][n:n+1]
     return (data ,nameofpart, id)
 
 with tf.device('/CPU'):
@@ -30,7 +30,7 @@ with tf.device('/CPU'):
     predict_FacesId = None
 
     for d in filenames_predict:
-        cur_points_OnFace, NamesofPart, FacesID = load_h5_name_id(os.path.join(path, d))
+        cur_points_OnFace, NamesofPart, FacesID = load_h5_name_id(os.path.join(path, d),1)
         if predict_points_OnFace is None:
             predict_points_OnFace = cur_points_OnFace
             predict_namesofpart = NamesofPart
