@@ -22,16 +22,13 @@ def load_h5(h5_filename):
 paths = [r'data\traindata.h5', r'data\validationdata.h5']
 
 # path to model weights
-model_save_weights_file = 'F:\ZH\DL_Pra\TrainResult\log\logtrain\ASIN_weights.h5'
-#model_save_weights_file = 'models\ASIN_weights.h5'
+model_save_weights_file = 'models\ASIN_weights.h5'
 
 # path to the best model weights
-best_model_save_weithts_file = 'F:\ZH\DL_Pra\TrainResult\log\logtrain\ASIN_best_weights.h5'
-#best_model_save_weithts_file = 'models\ASIN_best_weights.h5'
+best_model_save_weithts_file = 'models\ASIN_best_weights.h5'
 
 # path to the logging directory
-logdir = 'F:\ZH\DL_Pra\TrainResult\log\logtrain'
-#logdir = '\logdir'
+logdir = '\logdir'
 
 filenames_train = []
 for d in paths:
