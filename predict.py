@@ -18,7 +18,7 @@ def load_h5_name_id(h5_filename):
 
 with tf.device('/CPU'):
     path=r'demo_data'
-    model_save_weights_file=r'models\ASIN_best_weights.h5'
+    model_save_weights_file=r'models\ASIN_weights1.h5'
     WriteFile=r'draw\Results.txt'
 
     filenames_predict=[]
