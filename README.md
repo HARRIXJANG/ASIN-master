@@ -7,7 +7,7 @@ ASIN is a novel multi-task network based on point cloud data for machining featu
 In this repository, we release source codes for ASIN. In addition, we can only release a portion of the part point cloud data due to the need for confidentiality.
 
 ## Setup
-(1)	cuda 11.0.3
+(1)	cuda 11.0.3 \<br>
 (2)	python 3.8.8
 (3)	tensorflow 2.4.0
 (4)	h5py 2.10.0
