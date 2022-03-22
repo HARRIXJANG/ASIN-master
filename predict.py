@@ -18,7 +18,7 @@ def load_h5_name_id(h5_filename, n):
 
 with tf.device('/CPU'):
     path=r'demo_data'
-    model_save_weights_file=r'models\ASIN_weights1.h5'
+    model_save_weights_file=r'models\ASIN_best_weights.h5'
     WriteFile=r'draw\Results.txt'
 
     filenames_predict=[]
@@ -30,7 +30,7 @@ with tf.device('/CPU'):
     predict_FacesId = None
 
     for d in filenames_predict:
-        cur_points_OnFace, NamesofPart, FacesID = load_h5_name_id(os.path.join(path, d),1)
+        cur_points_OnFace, NamesofPart, FacesID = load_h5_name_id(os.path.join(path, d), 1)
         if predict_points_OnFace is None:
             predict_points_OnFace = cur_points_OnFace
             predict_namesofpart = NamesofPart
@@ -279,6 +279,12 @@ with tf.device('/CPU'):
                 logFile.write(str(BFLabel))
             logFile.write('\t')
         logFile.write('\n')
+        #上传版本不需要，但是有用
+        # for j in range(len(AllclustersResults[i])):
+        #     for k in range(len(AllclustersResults[i][j])):
+        #         logFile.write(str(int(AllclustersResults[i][j][k]))+'\t')
+        #     logFile.write('**'+'\t')
+        # logFile.write('\n')
         for j in range(len(PredictResult_Instances[i])):
             for k in range(len(PredictResult_Instances[i][j])):
                 logFile.write(str(int(PredictResult_Instances[i][j][k]))+'\t')
