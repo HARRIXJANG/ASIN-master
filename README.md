@@ -4,7 +4,7 @@ Created by Hang Zhang from Northwestern Polytechnical University.
 ## Introduction
 ASIN is a novel multi-task network based on point cloud data for machining feature recognition. ASIN realizes machining feature segmentation, machining feature identification, and bottom face identification simultaneously. The final machining feature recognition results are obtained by combining the results of the above three tasks. 
 
-In this repository, we release source codes and for ASIN. **In addition, it should be mentioned that we only release a portion of the part point cloud data due to the need for confidentiality.**
+In this repository, we release source codes and for ASIN. **It's also worth noting that, because to the necessity for secrecy, we only release a portion of the part point cloud data that contains holes, pockets, and slots.**
 
 ## Setup
 (1)	cuda 11.0.3  
