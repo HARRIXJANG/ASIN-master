@@ -41,3 +41,12 @@ The code is tested on Intel Core i9-10980XE CPU, 128GB memory, and NVIDIA GeForc
 ## Others
 (1)	Run `python draw_results.py` to visualize the result.  
 (2)	Run `python draw_original_point_clouds.py` to visualize the part point cloud in the dataset.  
+
+## Citation
+If you use this code please cite:
+ @inproceedings{zhang2022asin,
+        title={Machining feature recognition based on a novel multi-task deep learning network},
+        author={Hang Zhang, Shusheng Zhang, Yajun Zhang, Jiachen Liang, and Zhen Wang},
+        booktitle={Robotics and Computer-Integrated Manufacturing},
+        year={2022}
+    }
