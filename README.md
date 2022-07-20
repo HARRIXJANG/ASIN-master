@@ -1,5 +1,5 @@
 # ASIN-master
-Created by Hang Zhang from Northwestern Polytechnical University.
+Created by Hang Zhang from Northwestern Polytechnical University. 
 
 ## Introduction
 ASIN is a novel multi-task network based on point cloud data for machining feature recognition. ASIN realizes machining feature segmentation, machining feature identification, and bottom face identification simultaneously. The final machining feature recognition results are obtained by combining the results of the above three tasks. 
@@ -51,3 +51,5 @@ If you use this code please cite:
       booktitle={Robotics and Computer-Integrated Manufacturing},  
       year={2022}  
     }
+    
+If you have any questions about the code, please feel free to contact me (2015301048@mail.nwpu.edu.cn).
