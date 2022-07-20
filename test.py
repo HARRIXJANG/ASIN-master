@@ -67,7 +67,7 @@ for i in range(r_Feature_Recogintion.shape[0]):
         if all(tt == tt2):
             k_FR  += 1
 acc_Feature_Recogintion = k_FR / (r_Feature_Recogintion.shape[0]*r_Feature_Recogintion.shape[1])
-print(acc_Feature_Recogintion)
+print("Feature_Recognition: "+str(acc_Feature_Recogintion*100)+"%")
 
 k_BFR = 0
 for i in range(r_Bottom_Face_Recogintion.shape[0]):
@@ -77,7 +77,7 @@ for i in range(r_Bottom_Face_Recogintion.shape[0]):
         if all(tt == tt2):
             k_BFR += 1
 acc_Feature_Recogintion_Bottom = k_BFR / (r_Bottom_Face_Recogintion.shape[0]*r_Bottom_Face_Recogintion.shape[1])
-print(acc_Feature_Recogintion_Bottom)
+print("Bottom_Face_Recognition: "+str(acc_Feature_Recogintion_Bottom*100)+"%")
 
 k_IS = 0
 for i in range(r_Instances_Segment.shape[0]):
@@ -87,4 +87,4 @@ for i in range(r_Instances_Segment.shape[0]):
         if all(tt == tt2):
             k_IS += 1
 acc_Instances_Segment = k_IS / (r_Instances_Segment.shape[0]*r_Instances_Segment.shape[1])
-print(acc_Instances_Segment)
+print("Instance_Segment: "+str(acc_Instances_Segment*100)+"%")
