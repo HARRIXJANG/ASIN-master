@@ -15,10 +15,10 @@ def load_h5_name_id(h5_filename):
     return (data, label, bflabel, similarmatrix, numofinstances,nameofpart, id)
 
 # path to test data set
-filenames_predict = [r'data\ASIN_best_weights.h5']
+filenames_predict = [r'data\testdata.h5']
 
 # path to the best model weights
-model_save_weights_file = r'models\ASIN_weights1.h5'
+model_save_weights_file = r'models\ASIN_best_weights.h5'
 
 test_points_OnFace = None
 test_labels = None
