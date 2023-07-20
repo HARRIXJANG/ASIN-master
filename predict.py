@@ -199,19 +199,56 @@ with tf.device('/CPU'):
             MaxScoreFaceProposal.append(myindexofallindexsim[indexofMaxScore])
             allscoreofproposal.append(scoreinonepropose)
 
+        # DiffentGroups = []
+        # for j in range(len(MaxScoreFaceProposal)):
+        #     if j == 0:
+        #         DiffentGroups.append(MaxScoreFaceProposal[j])
+        #     else:
+        #         if MaxScoreFaceProposal[j] not in DiffentGroups:
+        #             DiffentGroups.append(MaxScoreFaceProposal[j])
+
+        # IsolatedProposals = []
+        # IntersectProposals = []
+        # IntersectScores = []
+        # kk = 0
+        # for diffentgroup in DiffentGroups:
+        #     num = 0
+        #     for element in diffentgroup:
+        #         for otherdiffentgroup in DiffentGroups:
+        #             if diffentgroup != otherdiffentgroup:
+        #                 if element in otherdiffentgroup:
+        #                     num += 1
+        #                     break
+        #     if num == 0:
+        #         IsolatedProposals.append(diffentgroup)
+        #     else:
+        #         IntersectProposals.append(diffentgroup)
+        #         IntersectScores.append(MaxScores[kk])
+        #     kk += 1
+        # IntersectScoresCopy = IntersectScores.copy()
+        # IntersectScoresCopy.sort(reverse=True)
+        # indexesofIntersectScores = []
+        # for IntersectScore in IntersectScoresCopy:
+        #     index = IntersectScores.index(IntersectScore)
+        #     indexesofIntersectScores.append(index)
+        
         DiffentGroups = []
+        New_MaxScores = [] 
         for j in range(len(MaxScoreFaceProposal)):
             if j == 0:
                 DiffentGroups.append(MaxScoreFaceProposal[j])
+                New_MaxScores.append(MaxScores[j])
+
             else:
                 if MaxScoreFaceProposal[j] not in DiffentGroups:
                     DiffentGroups.append(MaxScoreFaceProposal[j])
+                    New_MaxScores.append(MaxScores[j]) 
 
         IsolatedProposals = []
         IntersectProposals = []
         IntersectScores = []
-        kk = 0
-        for diffentgroup in DiffentGroups:
+        kk = 0 
+        for diffentgroup in DiffentGroups: 
             num = 0
             for element in diffentgroup:
                 for otherdiffentgroup in DiffentGroups:
@@ -223,15 +260,11 @@ with tf.device('/CPU'):
                 IsolatedProposals.append(diffentgroup)
             else:
                 IntersectProposals.append(diffentgroup)
-                IntersectScores.append(MaxScores[kk])
+                IntersectScores.append(New_MaxScores[kk])
             kk += 1
-        IntersectScoresCopy = IntersectScores.copy()
-        IntersectScoresCopy.sort(reverse=True)
-        indexesofIntersectScores = []
-        for IntersectScore in IntersectScoresCopy:
-            index = IntersectScores.index(IntersectScore)
-            indexesofIntersectScores.append(index)
 
+        indexesofIntersectScores = sorted(range(len(IntersectScores)), key=lambda k: IntersectScores[k], reverse=True)
+        
         kk = 0
         for index in indexesofIntersectScores:
             num = 0
