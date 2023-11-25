@@ -75,7 +75,7 @@ validation_bottom_labels = None
 for d in filenames_validation:
     cur_points_OnFace, cur_labels, cur_similar_matrix, cur_numofinstances, cur_bottom_labels = load_h5(d)
     cur_points_OnFace = cur_points_OnFace[:, :, :32, :]
-    if validation_labels is None or train_points_OnFace is None:
+    if validation_labels is None or validation_points_OnFace is None:
         validation_labels = cur_labels
         validation_points_OnFace = cur_points_OnFace
         validation_similar_matrix = cur_similar_matrix
